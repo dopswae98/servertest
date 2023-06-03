@@ -4,9 +4,9 @@ import cors from "cors"
 // const mongoose = require("mongoose");
 // const UserModel = require("./models/Users");
 
-import mysql from "mysql";
-import nodemailer from "nodemailer";
-import dotenv from "dotenv";
+// import mysql from "mysql";
+// import nodemailer from "nodemailer";
+// import dotenv from "dotenv";
 // dotenv.config();
 
 // const transporter = nodemailer.createTransport({
@@ -44,14 +44,14 @@ app.listen(3004, () => {
   // sendTheEmail();
 });
 
-const db = mysql.createConnection({
-  host: "localhost",
-  user: "test",
-  // password: "Kingping123*",
-  password: "Matarutse98*",
-  database: "data1",
-  // port: 3306,
-});
+// const db = mysql.createConnection({
+//   host: "localhost",
+//   user: "test",
+//   // password: "Kingping123*",
+//   password: "Matarutse98*",
+//   database: "data1",
+//   // port: 3306,
+// });
 
 app.get("/", (req, res) => {
   res.json({"name": "ephraim"});
@@ -66,24 +66,24 @@ app.get("/", (req, res) => {
 //   });
 // });
 
-db.connect(
-  function (error){
-    if (error){
+// db.connect(
+//   function (error){
+//     if (error){
 
-      console.log(error, "has occured")
-    }else{
-    console.log("successfully connected")
-  }
-})
+//       console.log(error, "has occured")
+//     }else{
+//     console.log("successfully connected")
+//   }
+// })
 
-app.get("/books", (req, res) => {
-  const q = "SELECT * FROM data";
-  db.query(q, (err, data) => {
-    if (err) return console.log(err);
-    // return res.json(data[0].id);
-    return res.json(data);
-  });
-});
+// app.get("/books", (req, res) => {
+//   const q = "SELECT * FROM data";
+//   db.query(q, (err, data) => {
+//     if (err) return console.log(err);
+//     // return res.json(data[0].id);
+//     return res.json(data);
+//   });
+// });
 
 
 
